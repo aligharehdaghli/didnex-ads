@@ -12,10 +12,7 @@ class RewardedInterstitialAdButton extends StatefulWidget {
 class _RewardedInterstitialAdButtonState
     extends State<RewardedInterstitialAdButton> {
   static const String unitId = 'UNT_b4b0a1eb4868493793edc25d93dcbdfd';
-
-  static const String diagnosticToken =
-      'UNT_b4b0a1eb4868493793edc25d93dcbdfd.1794750898317.ByaMOCCrDkZMEMkmMQcyBKUD-FWyn3FQHTNSoDKQjJM.INT_375d7dd022614427b4e6a0fbd53a55eb';
-
+ 
   bool _busy = false;
   String _message = 'برای دریافت جایزه، تبلیغ را تماشا کنید';
 
@@ -31,7 +28,6 @@ class _RewardedInterstitialAdButtonState
       final receipt = await DidnexAds.showRewarded(
         context,
         unitId: unitId,
-        diagnosticToken: diagnosticToken.isEmpty ? null : diagnosticToken,
       );
 
       if (!mounted) return;

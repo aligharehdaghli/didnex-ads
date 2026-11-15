@@ -11,9 +11,7 @@ class AppOpenAdButton extends StatefulWidget {
 class _AppOpenAdButtonState extends State<AppOpenAdButton> {
   static const String unitId = 'UNT_0aa1674c4ff24cee935055e01dacc7a0';
 
-  static const String diagnosticToken =
-      'UNT_0aa1674c4ff24cee935055e01dacc7a0.1794750999326.5qdFaacngzBtx_xcvNzRy76TZZ0zU5R_0qXWp8qSg24.INT_3d7696d65d3a4a27b21f15cf6f10ba33';
-
+   
   bool _busy = false;
 
   Future<void> _showAd() async {
@@ -25,7 +23,7 @@ class _AppOpenAdButtonState extends State<AppOpenAdButton> {
       final shown = await DidnexAds.showInterstitial(
         context,
         unitId: unitId,
-        diagnosticToken: diagnosticToken.isEmpty ? null : diagnosticToken,
+      
       );
 
       if (!mounted) return;

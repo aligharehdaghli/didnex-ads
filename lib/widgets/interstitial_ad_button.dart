@@ -10,10 +10,7 @@ class InterstitialAdButton extends StatefulWidget {
 
 class _InterstitialAdButtonState extends State<InterstitialAdButton> {
   static const String unitId = 'UNT_9ef8860e4a7940b3bcd5117d2c94be04';
-
-  static const String diagnosticToken =
-      'UNT_9ef8860e4a7940b3bcd5117d2c94be04.1794750574626.x7qn6w1Z3xUdMB218UQm8TEVwXe4VQuNLFSytntMkak.INT_97e7a134eb9046a7a673a3f3cf19ae1d';
-
+ 
   bool _busy = false;
   String _message = 'برای نمایش تبلیغ کلیک کنید';
 
@@ -29,8 +26,7 @@ class _InterstitialAdButtonState extends State<InterstitialAdButton> {
       final shown = await DidnexAds.showInterstitial(
         context,
         unitId: unitId,
-        diagnosticToken: diagnosticToken.isEmpty ? null : diagnosticToken,
-      );
+     );
 
       if (!mounted) return;
 

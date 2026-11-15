@@ -9,8 +9,7 @@ void main() {
       adOrigin: Uri.parse('https://didnex.com'),
       child:  MaterialApp(
         debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.dark,
-        theme: ThemeData.dark(),
+      
         home: HomePage(),
       ),
     ),
