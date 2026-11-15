@@ -1,0 +1,25 @@
+name: didnex_ads
+description: Didnex mobile advertising SDK with image, native and video views, signed measurement and hosted rewards, consented push and optional publisher-server authentication.
+version: 3.12.2
+homepage: https://didnex.com/docs/publisher/flutter
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+  flutter: '>=3.27.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  video_player: ^2.9.2
+  url_launcher: ^6.3.1
+dev_dependencies:
+  video_player_platform_interface: ^6.2.3
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: ir.didnex.didnex_ads
+        pluginClass: DidnexAdsPlugin
+      ios:
+        pluginClass: DidnexAdsPlugin

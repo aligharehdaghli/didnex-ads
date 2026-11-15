@@ -1,0 +1,1 @@
+-keep class com.didnex.ads.DidnexIntegrity { public <init>(android.content.Context, java.lang.String); public org.json.JSONObject proof(java.lang.String, java.lang.String, java.lang.String); }

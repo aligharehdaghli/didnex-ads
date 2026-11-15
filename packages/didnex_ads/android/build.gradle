@@ -1,0 +1,38 @@
+group 'ir.didnex.didnex_ads'
+version '3.12.0'
+// AGP and Kotlin are owned by the host Flutter application. Never resolve a
+// second, pinned buildscript classpath (the former AGP 8.3.2 dependency).
+apply plugin: 'com.android.library'
+def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0].toInteger()
+def builtInKotlin = agpMajor >= 9 && project.findProperty('android.builtInKotlin')?.toString() != 'false'
+if (!builtInKotlin) {
+    apply plugin: 'org.jetbrains.kotlin.android'
+}
+android {
+    namespace 'ir.didnex.didnex_ads'
+    compileSdk 36
+    defaultConfig { minSdk 24; consumerProguardFiles 'consumer-rules.pro' }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+kotlin {
+    if (project.findProperty('didnex.enablePlayIntegrity')?.toString()?.equalsIgnoreCase('true') == true) {
+        sourceSets.named('main') { kotlin.srcDir('optional-integrity') }
+    }
+    if (builtInKotlin) {
+        compilerOptions { jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17 }
+    }
+}
+if (!builtInKotlin) {
+    android { kotlinOptions { jvmTarget = '17' } }
+}
+repositories { google(); mavenCentral() }
+dependencies {
+    if (project.findProperty('didnex.enablePlayIntegrity')?.toString()?.equalsIgnoreCase('true') == true) {
+        implementation 'com.google.android.play:integrity:1.6.0'
+        implementation 'com.google.android.gms:play-services-tasks:18.4.1'
+    }
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+}

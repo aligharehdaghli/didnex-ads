@@ -1,0 +1,6 @@
+analyzer:
+  exclude:
+    - integrations/** # Optional host Firebase adapter.
+    - build/**
+    - android/**
+    - ios/**

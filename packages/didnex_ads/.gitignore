@@ -1,0 +1,12 @@
+.dart_tool/
+.packages
+.pub-cache/
+.flutter-plugins*
+build/
+coverage/
+example/android/
+example/ios/
+example/macos/
+example/linux/
+example/windows/
+example/web/
